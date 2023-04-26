@@ -5,6 +5,7 @@ module.exports = {
   siteMetadata: {
     title: `HopfenStop PWA`,
     siteUrl: `https://www.pwa.hopfenstop.de`,
+    pathPrefix: "/hopfenstop-light",
   },
   plugins: [
     'gatsby-plugin-image',

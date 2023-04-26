@@ -11,26 +11,29 @@ const KioskDetailView = ({location}) => {
     const kiosk = kioskData.find(item => item.kioskId === kioskId);
     console.log(kiosk)
 
-  return (
-    <Layout pageTitle={kiosk.name}>
-        <KioskHeaderMap lat={kiosk.address.geolat} long={kiosk.address.geolng}/>
-        <div style={styles.kioskDetailView.sectionHeader}>Beschreibung</div>
-        <div style={styles.kioskDetailView.sectionText}>{kiosk.description}</div>
-        {kiosk.kioskTags.find(item => item.tag === 'WC') ?
-            <div style={styles.kioskDetailView.toilet}>Mit WC</div> :
-            <div style={styles.kioskDetailView.noToilet}>Ohne WC</div>}
-        <div style={styles.kioskDetailView.sectionHeader}>Öffnungszeiten</div>
-        {kiosk.kioskTimes.length === 0 ?
-            <div style={styles.kioskDetailView.sectionText}>Keine Öffnungszeiten vorhanden</div> :
-            <KioskTimes kioskTimes={kiosk.kioskTimes}/>
-        }
-        <div style={styles.kioskDetailView.sectionHeader}>Adresse</div>
 
-        <div style={styles.kioskDetailView.sectionText}>{kiosk.address.street} {kiosk.address.number}, {kiosk.address.city}</div>
+  if (kiosk){
+    return (
+      <Layout pageTitle={kiosk.name}>
+          <KioskHeaderMap lat={kiosk.address.geolat} long={kiosk.address.geolng}/>
+          <div style={styles.kioskDetailView.sectionHeader}>Beschreibung</div>
+          <div style={styles.kioskDetailView.sectionText}>{kiosk.description}</div>
+          {kiosk.kioskTags.find(item => item.tag === 'WC') ?
+              <div style={styles.kioskDetailView.toilet}>Mit WC</div> :
+              <div style={styles.kioskDetailView.noToilet}>Ohne WC</div>}
+          <div style={styles.kioskDetailView.sectionHeader}>Öffnungszeiten</div>
+          {kiosk.kioskTimes.length === 0 ?
+              <div style={styles.kioskDetailView.sectionText}>Keine Öffnungszeiten vorhanden</div> :
+              <KioskTimes kioskTimes={kiosk.kioskTimes}/>
+          }
+          <div style={styles.kioskDetailView.sectionHeader}>Adresse</div>
+
+          <div style={styles.kioskDetailView.sectionText}>{kiosk.address.street} {kiosk.address.number}, {kiosk.address.city}</div>
 
 
-    </Layout>
-  )
+      </Layout>
+    )
+  }
 }
 
 export const Head = () => <title>Kiosk Details</title>
