@@ -1,3 +1,13 @@
+.mapContainer {
+  position: relative;
+  height: calc(100% - 56px); /* default height */
+}
+
+@media screen and (min-width: 600px) {
+  .mapContainer {
+    height: calc(100% - 64px); /* height for screens over 600px width */
+  }
+}
 .marker {
   background: #fdcf18;
   border-radius: 50%;

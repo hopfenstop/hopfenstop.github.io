@@ -1,14 +1,14 @@
-import React from 'react';
-import { Text, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-cluster';
-import { marker } from './map.module.css';
+import * as styles from './map.module.css';
 
 import kioskData from '../data/kiosk_data.json';
 import L from 'leaflet';
 import { navigate } from 'gatsby';
 
-var svgIcon = null
+var svgIcon = null;
 
 if (typeof window !== 'undefined') {
   svgIcon = L.divIcon({
@@ -22,13 +22,12 @@ if (typeof window !== 'undefined') {
 const createClusterCustomIcon = function (cluster) {
   return L.divIcon({
     html: `<span style="font-weight: 400; color: white">${cluster.getChildCount()}</span>`,
-    className: marker,
+    className: styles.marker,
     iconSize: L.point(33, 33, true),
   });
 };
 
-const KioskMap = function(){
-  
+const KioskMap = function () {
   function LocationMarker() {
     const [position, setPosition] = useState(null);
     const [bbox, setBbox] = useState([]);
@@ -36,25 +35,22 @@ const KioskMap = function(){
     const map = useMap();
 
     useEffect(() => {
-      map.locate().on("locationfound", function (e) {
+      map.locate().on('locationfound', function (e) {
         setPosition(e.latlng);
         map.flyTo(e.latlng, map.getZoom());
         const radius = e.accuracy;
         const circle = L.circle(e.latlng, radius);
         circle.addTo(map);
-        setBbox(e.bounds.toBBoxString().split(","));
+        setBbox(e.bounds.toBBoxString().split(','));
       });
     }, [map]);
 
-    return position === null ? null : (
-      <Marker position={position}>
-      </Marker>
-    );
+    return position === null ? null : <Marker position={position}></Marker>;
   }
 
-  return(
+  return (
     <MapContainer
-      style={{ height: '600px' }}
+      className={styles.mapContainer}
       center={[50.1109, 8.6821]}
       zoom={13}
       scrollWheelZoom={true}
@@ -98,6 +94,6 @@ const KioskMap = function(){
       </MarkerClusterGroup>
     </MapContainer>
   );
-}
+};
 
 export default KioskMap;
