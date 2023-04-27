@@ -1,7 +1,4 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 
 import { Link } from 'gatsby';
 import {
@@ -10,17 +7,12 @@ import {
   navLinkItem,
   navLinkText,
 } from './layout.module.css';
+import NavBar from './app_bar';
 
 const Layout = ({ pageTitle, children }) => {
   return (
     <div style={{ height: '100vh' }} className={container}>
-      <AppBar position='sticky' sx={{ bgcolor: '#e0ab16', top: 0, left: 0 }}>
-        <Toolbar disableGutters sx={{ marginLeft: 3 }}>
-          <Typography textAlign='center' sx={{ fontSize: 24, fontWeight: 600 }}>
-            {pageTitle}
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <NavBar pageTitle={pageTitle} />
       {children}
       <nav>
         <ul className={navLinks}>
