@@ -2,7 +2,6 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  pathPrefix: "/hopfenstop-light",
   siteMetadata: {
     title: `HopfenStop PWA`,
     siteUrl: `https://www.pwa.hopfenstop.de`,
