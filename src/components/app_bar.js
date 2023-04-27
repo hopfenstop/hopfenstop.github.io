@@ -12,12 +12,23 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import { Link } from 'gatsby';
+import { navigate } from 'gatsby';
+import HttpsIcon from '@mui/icons-material/Https';
+import DescriptionIcon from '@mui/icons-material/Description';
+import StorefrontIcon from '@mui/icons-material/Storefront';
 
 const navItems = [
-  { title: 'Home', url: '/' },
-  { title: 'Impressum', url: '/imprint' },
-  { title: 'Datenschutz', url: '/data_protection' },
+  { title: 'Kioske', url: '/', icon: <StorefrontIcon color='action' /> },
+  {
+    title: 'Impressum',
+    url: '/imprint',
+    icon: <DescriptionIcon color='action' />,
+  },
+  {
+    title: 'Datenschutz',
+    url: '/data_protection',
+    icon: <HttpsIcon color='action' />,
+  },
 ];
 
 const drawerWidth = 240;
@@ -29,7 +40,11 @@ const NavBar = ({ pageTitle }) => {
     setMobileOpen((prevState) => !prevState);
   };
 
-  const drawer = (
+  const handleOnClick = (url) => {
+    navigate(url);
+  };
+
+  const drawer = (pageTitle) => (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant='h6' sx={{ my: 2 }}>
         HopfenStop
@@ -38,8 +53,13 @@ const NavBar = ({ pageTitle }) => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.title} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item.title} />
+            <ListItemButton
+              sx={{ alignItems: 'center' }}
+              onClick={() => handleOnClick(item.url)}
+            >
+              {' '}
+              {item.icon}
+              <ListItemText style={{ marginLeft: 10 }} primary={item.title} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -52,7 +72,12 @@ const NavBar = ({ pageTitle }) => {
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar position='sticky' sx={{ bgcolor: '#e0ab16', top: 0, left: 0 }}>
-        <Toolbar disableGutters sx={{ marginLeft: 3 }}>
+        <Toolbar
+          disableGutters
+          sx={{
+            marginLeft: 3,
+          }}
+        >
           <IconButton
             color='inherit'
             aria-label='open drawer'
@@ -69,10 +94,19 @@ const NavBar = ({ pageTitle }) => {
           >
             {pageTitle}
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box
+            sx={{
+              display: { xs: 'none', sm: 'block' },
+              marginLeft: 'auto',
+            }}
+          >
             {navItems.map((item) => (
-              <Button key={item.title} sx={{ color: '#fff' }}>
-                <Link to={item.url}>{item.title}</Link>
+              <Button
+                key={item.title}
+                sx={{ color: '#fff' }}
+                onClick={() => handleOnClick(item.url)}
+              >
+                {item.title}
               </Button>
             ))}
           </Box>
@@ -95,7 +129,7 @@ const NavBar = ({ pageTitle }) => {
             },
           }}
         >
-          {drawer}
+          {drawer(pageTitle)}
         </Drawer>
       </Box>
     </Box>

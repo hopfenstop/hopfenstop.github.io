@@ -3,7 +3,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `HopfenStop PWA`,
+    title: `HopfenStop`,
     siteUrl: `https://www.pwa.hopfenstop.de`,
   },
   plugins: [
