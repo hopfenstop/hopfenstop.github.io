@@ -16,6 +16,7 @@ import { navigate } from 'gatsby';
 import HttpsIcon from '@mui/icons-material/Https';
 import DescriptionIcon from '@mui/icons-material/Description';
 import StorefrontIcon from '@mui/icons-material/Storefront';
+import Illustration from '../svg/hopfenstop.svg';
 
 const navItems = [
   { title: 'Kioske', url: '/', icon: <StorefrontIcon color='action' /> },
@@ -46,10 +47,9 @@ const NavBar = ({ pageTitle }) => {
 
   const drawer = (pageTitle) => (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant='h6' sx={{ my: 2 }}>
-        HopfenStop
-      </Typography>
-      <Divider />
+      <Box style={{ backgroundColor: '#e0ab16' }}>
+        <Illustration style={{ width: 150, height: 150 }} />
+      </Box>
       <List>
         {navItems.map((item) => (
           <ListItem key={item.title} disablePadding>
