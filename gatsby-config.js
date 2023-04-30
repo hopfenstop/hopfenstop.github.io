@@ -40,7 +40,7 @@ module.exports = {
         icon: `src/images/logo.png`,
         start_url: `/`,
         background_color: `#E8B119`,
-        theme_color: `#`,
+        theme_color: `#E8B119`,
         display: `standalone`,
       },
     },

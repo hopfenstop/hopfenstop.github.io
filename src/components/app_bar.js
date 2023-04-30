@@ -21,14 +21,14 @@ import Illustration from '../svg/hopfenstop.svg';
 const navItems = [
   { title: 'Kioske', url: '/', icon: <StorefrontIcon color='action' /> },
   {
-    title: 'Impressum',
-    url: '/imprint',
-    icon: <DescriptionIcon color='action' />,
-  },
-  {
     title: 'Datenschutz',
     url: '/data_protection',
     icon: <HttpsIcon color='action' />,
+  },
+  {
+    title: 'Impressum',
+    url: '/imprint',
+    icon: <DescriptionIcon color='action' />,
   },
 ];
 
@@ -47,7 +47,7 @@ const NavBar = ({ pageTitle }) => {
 
   const drawer = (pageTitle) => (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Box style={{ backgroundColor: '#e0ab16' }}>
+      <Box style={{ backgroundColor: '#E8B119' }}>
         <Illustration style={{ width: 150, height: 150 }} />
       </Box>
       <List>
@@ -71,7 +71,7 @@ const NavBar = ({ pageTitle }) => {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar position='sticky' sx={{ bgcolor: '#e0ab16', top: 0, left: 0 }}>
+      <AppBar position='sticky' sx={{ bgcolor: '#E8B119', top: 0, left: 0 }}>
         <Toolbar
           disableGutters
           sx={{
