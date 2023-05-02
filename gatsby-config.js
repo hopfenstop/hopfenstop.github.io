@@ -3,7 +3,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `HopfenStop PWA`,
+    title: `HopfenStop`,
     siteUrl: `https://www.pwa.hopfenstop.de`,
   },
   plugins: [
@@ -25,6 +25,14 @@ module.exports = {
       __key: 'images',
     },
     {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /svg/,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `HopfenStop`,
@@ -32,7 +40,7 @@ module.exports = {
         icon: `src/images/logo.png`,
         start_url: `/`,
         background_color: `#E8B119`,
-        theme_color: `#`,
+        theme_color: `#E8B119`,
         display: `standalone`,
       },
     },
