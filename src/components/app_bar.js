@@ -6,7 +6,6 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -67,7 +66,10 @@ const NavBar = ({ pageTitle }) => {
     </Box>
   );
 
-  const container = document.querySelector('body');
+  let container;
+  if (typeof window !== "undefined") {
+    container = document.querySelector('body');
+  }
 
   return (
     <Box sx={{ display: 'flex' }}>
