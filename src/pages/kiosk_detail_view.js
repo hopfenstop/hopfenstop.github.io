@@ -12,7 +12,12 @@ const KioskDetailView = ({location}) => {
     const params = new URLSearchParams(location.search);
     var kioskId = params.get('kiosk_id')
     const kiosk = kioskData.find(item => item.kioskId === kioskId);
-    const navigationLink = 'https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=' + kiosk.address.geolat + ',' + kiosk.address.geolng;
+
+    let coordinates;
+    if (kiosk && kiosk.address) {
+      coordinates = kiosk.address.geolat + ',' + kiosk.address.geolng;
+    }
+    const navigationLink = 'https://www.google.com/maps/dir/?api=1&travelmode=walking&destination=' + coordinates;
 
     const handleNavigate = () => {
       navigate(navigationLink);
