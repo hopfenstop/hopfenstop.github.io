@@ -16,10 +16,11 @@ if (typeof window !== 'undefined') {
 const KioskHeaderMap = ({lat, long}) => (
   <MapContainer style={{ height: '250px' }} center={[lat, long]} zoom={16} scrollWheelZoom={false}>
     <TileLayer
-          attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
           ext='png'
-          url='https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}'
+          url='https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png'
     />
+
     <Marker 
         position={[lat, long]}
         icon={svgIcon}
