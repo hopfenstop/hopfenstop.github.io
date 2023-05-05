@@ -52,7 +52,7 @@ const KioskMap = function () {
     <MapContainer
       className={styles.mapContainer}
       center={[50.1109, 8.6821]}
-      zoom={13}
+      zoom={20}
       scrollWheelZoom={true}
     >
       <LocationMarker />
