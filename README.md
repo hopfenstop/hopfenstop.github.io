@@ -1,5 +1,7 @@
 # HopfenStop
 
+<img src="./src/images/logo-transparent-background.png"  width="150" height="150">
+
 ## Run in Development Mode
 
 In order to run HofepnStop on your local machine please run:
