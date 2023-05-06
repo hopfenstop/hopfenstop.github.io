@@ -14,32 +14,32 @@ import { styles } from '../../styles'
         <div>
             <table>
                 <tr>
-                    <td>Montag</td>
-                    <td>{formatFromUntil(times.MONDAY)}</td>
+                    <td style={styles.kioskTimes.dayColumn}>Montag</td>
+                    <td style={styles.kioskTimes.timeColumn}>{formatFromUntil(times.MONDAY)}</td>
                 </tr>
                 <tr>
-                    <td>Dienstag</td>
-                    <td>{formatFromUntil(times.TUESDAY)}</td>
+                    <td style={styles.kioskTimes.dayColumn}>Dienstag</td>
+                    <td style={styles.kioskTimes.timeColumn}>{formatFromUntil(times.TUESDAY)}</td>
                 </tr>
                 <tr>
-                    <td>Mittwoch</td>
-                    <td>{formatFromUntil(times.WEDNESDAY)}</td>
+                    <td style={styles.kioskTimes.dayColumn}>Mittwoch</td>
+                    <td style={styles.kioskTimes.timeColumn}>{formatFromUntil(times.WEDNESDAY)}</td>
                 </tr>
                 <tr>
-                    <td>Donnerstag</td>
-                    <td>{formatFromUntil(times.THURSDAY)}</td>
+                    <td style={styles.kioskTimes.dayColumn}>Donnerstag</td>
+                    <td style={styles.kioskTimes.timeColumn}>{formatFromUntil(times.THURSDAY)}</td>
                 </tr>
                 <tr>
-                    <td>Freitag</td>
-                    <td>{formatFromUntil(times.FRIDAY)}</td>
+                    <td style={styles.kioskTimes.dayColumn}>Freitag</td>
+                    <td style={styles.kioskTimes.timeColumn}>{formatFromUntil(times.FRIDAY)}</td>
                 </tr>
                 <tr>
-                    <td>Samstag</td>
-                    <td>{formatFromUntil(times.SATURDAY)}</td>
+                    <td style={styles.kioskTimes.dayColumn}>Samstag</td>
+                    <td style={styles.kioskTimes.timeColumn}>{formatFromUntil(times.SATURDAY)}</td>
                 </tr>
                 <tr>
-                    <td>Sonntag</td>
-                    <td>{formatFromUntil(times.SUNDAY)}</td>
+                    <td style={styles.kioskTimes.dayColumn}>Sonntag</td>
+                    <td style={styles.kioskTimes.timeColumn}>{formatFromUntil(times.SUNDAY)}</td>
                 </tr>
             </table>
         </div>

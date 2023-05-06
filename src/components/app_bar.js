@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import ArrowBack from '@mui/icons-material/ArrowBack';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -38,6 +39,10 @@ const NavBar = ({ pageTitle }) => {
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+
+  const handleBack = () => {
+    navigate('/');
   };
 
   const handleOnClick = (url) => {
@@ -80,15 +85,28 @@ const NavBar = ({ pageTitle }) => {
             marginLeft: 3,
           }}
         >
-          <IconButton
-            color='inherit'
-            aria-label='open drawer'
-            edge='start'
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
+          {pageTitle !== 'HopfenStop' ?
+            <IconButton
+              color='inherit'
+              aria-label='back'
+              edge='start'
+              onClick={handleBack}
+              sx={{ mr: 2, display: { sm: 'none' } }}
+            >
+              <ArrowBack />
+              </IconButton>
+          :
+            <IconButton
+              color='inherit'
+              aria-label='open drawer'
+              edge='start'
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: 'none' } }}
+            >
+              <MenuIcon />
+            </IconButton>
+          }
+          
           <Typography
             component='div'
             textAlign='center'
