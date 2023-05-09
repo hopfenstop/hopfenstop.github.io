@@ -1,4 +1,7 @@
-# HopfenStop
+<img src="./src/images/logo-transparent-background.png"  align="right" width="30%">
+
+# HopfenStop 
+
 
 ## Run in Development Mode
 
