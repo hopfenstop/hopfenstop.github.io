@@ -78,7 +78,7 @@ const KioskMap = function () {
               eventHandlers={{
                 click: function (event) {
                   navigate(
-                    '/kiosk_detail_view?kiosk_id=' + event.target.options.id
+                    '/kiosk?id=' + event.target.options.id
                   );
                 },
               }}
