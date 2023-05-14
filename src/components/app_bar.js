@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ArrowBack from '@mui/icons-material/ArrowBack';
+import AddHome from '@mui/icons-material/AddHome';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -20,6 +21,7 @@ import Illustration from '../svg/hopfenstop.svg';
 
 const navItems = [
   { title: 'Kioske', url: '/', icon: <StorefrontIcon color='action' /> },
+  { title: 'Als App hinzufügen', url: '/homescreen', icon: <AddHome color='action' /> },
   {
     title: 'Datenschutz',
     url: '/data_protection',
