@@ -10,7 +10,7 @@ import { navigate } from 'gatsby';
 
 const KioskDetailView = ({location}) => {
     const params = new URLSearchParams(location.search);
-    var kioskId = params.get('kiosk_id')
+    var kioskId = params.get('id')
     const kiosk = kioskData.find(item => item.kioskId === kioskId);
 
     let coordinates;
