@@ -24,7 +24,7 @@ const navItems = [
   { title: 'Als App hinzufügen', url: '/homescreen', icon: <AddHome color='action' /> },
   {
     title: 'Datenschutz',
-    url: '/data_protection',
+    url: '/privacy',
     icon: <HttpsIcon color='action' />,
   },
   {
