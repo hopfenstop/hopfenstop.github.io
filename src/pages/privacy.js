@@ -24,7 +24,6 @@ const DataProtection = () => {
             <p>
                 <b>Verantwortlich für die Verarbeitung Deiner Daten in der HopfenStop App ist:</b><br />
                 <br />
-                Sekato GbR<br />
                 Blam, Sebastian; Kroth, Kai und Rohrer, Tobias<br />
                 Kaufunger Str. 7<br />
                 60486 Frankfurt am Main<br />

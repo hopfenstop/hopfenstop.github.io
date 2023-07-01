@@ -8,7 +8,7 @@ const Imprint = () => {
         <div style={styles.contentWrapper}>
           <p><b>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</b></p>
           <p>
-              Blam, Sebastian; Kroth, Kai und Rohrer, Tobias - Sekato GbR<br />
+              Blam, Sebastian; Kroth, Kai und Rohrer, Tobias<br />
               Kaufunger Str. 7<br />
               60486 Frankfurt am Main<br />
               Hessen<br />
@@ -17,8 +17,6 @@ const Imprint = () => {
               E-Mail: info@hopfenstop.de<br />
               Telefon: +49(0)1601845214<br />
               Internetadresse: hopfenstop.de<br />
-              <br />
-              Umsatzsteuer-Identifikationsnummer: DE312863617<br />
           </p>
         </div>
     </Layout>
