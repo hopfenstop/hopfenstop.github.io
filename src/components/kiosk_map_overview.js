@@ -73,21 +73,34 @@ const KioskMap = function () {
       >
         {kioskData.map(function (data) {
           return (
-            <Marker
-              id={data.kioskId}
-              eventHandlers={{
-                click: function (event) {
-                  navigate(
-                    '/kiosk?id=' + event.target.options.id
-                  );
-                },
-              }}
-              key={data.kioskId}
-              position={[data.address.geolat, data.address.geolng]}
-              icon={svgIcon}
-            >
-              <Popup>{data.name}</Popup>
-            </Marker>
+              <Marker
+    key={data.kioskId}
+    position={[data.address.geolat, data.address.geolng]}
+    icon={svgIcon}
+  >
+    <Popup>
+      <div style={{ textAlign: 'center' }}>
+        <h4 style={{ margin: '4px 0' }}>{data.name}</h4>
+        <p style={{ fontSize: '0.9em', margin: 0 }}>
+          {data.address.street} {data.address.number}<br />
+        </p>
+        <button
+          style={{
+            marginTop: '6px',
+            padding: '4px 8px',
+            background: '#e9b11b',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '6px',
+            cursor: 'pointer',
+          }}
+          onClick={() => navigate('/kiosk?id=' + data.kioskId)}
+        >
+          View Details
+        </button>
+      </div>
+    </Popup>
+  </Marker>
           );
         })}
       </MarkerClusterGroup>
