@@ -36,7 +36,7 @@ const KioskMap = function () {
     useEffect(() => {
       map.locate().on('locationfound', function (e) {
         setPosition(e.latlng);
-        map.flyTo(e.latlng, map.getZoom());
+        map.setView(e.latlng, map.getZoom(), { animate: false });
         const radius = e.accuracy;
         const circle = L.circle(e.latlng, radius);
         circle.addTo(map);
@@ -63,6 +63,7 @@ const KioskMap = function () {
       <MarkerClusterGroup
         iconCreateFunction={createClusterCustomIcon}
         chunkedLoading
+        maxClusterRadius={35}
         polygonOptions={{
           fillColor: 'lightgrey',
           color: 'grey',
